@@ -19,6 +19,7 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.openqa.selenium.Keys.BACK_SPACE;
 
 public class CardDeliveryOrderTests {
 
@@ -50,7 +51,7 @@ public class CardDeliveryOrderTests {
         $("[placeholder='Город']").setValue("Волгоград");
         $("[data-test-id='date'] .input__control").click();
         $("[data-test-id='date'] .input__control").sendKeys(Keys.CONTROL + "A");
-        $("[data-test-id='date'] .input__control").sendKeys(Keys.BACK_SPACE);
+        $("[data-test-id='date'] .input__control").sendKeys(BACK_SPACE);
         $("[data-test-id='date'] .input__control").setValue(dataGenerate(3));
         $("[name='name']").setValue("Иванов Иван");
         $("[name='phone']").setValue("+79876543211");
