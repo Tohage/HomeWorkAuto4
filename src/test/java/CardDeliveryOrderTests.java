@@ -24,8 +24,6 @@ import static org.openqa.selenium.Keys.BACK_SPACE;
 
 public class CardDeliveryOrderTests {
 
-    private WebDriver driver;
-
     @BeforeAll
     static void setUpAll() {
         WebDriverManager.chromedriver().setup();
@@ -43,8 +41,6 @@ public class CardDeliveryOrderTests {
 
     @Test
     void fieldsAreFilledCorrectly() {
-        Configuration.holdBrowserOpen = true;
-        open("http://localhost:9999/");
         $("[placeholder='Город']").setValue("Волгоград");
         $("[data-test-id='date'] .input__control").click();
         $("[data-test-id='date'] .input__control").sendKeys(Keys.CONTROL + "A");
